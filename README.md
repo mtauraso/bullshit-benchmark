@@ -108,13 +108,25 @@ Provider routing is configured per model via `collect.model_providers` and
 ./scripts/run_end_to_end.sh --config config.v2.json --viewer-output-dir data/v2/latest --with-additional-judges
 ```
 
-4. Optionally run the default config end-to-end (publishes to `data/latest`):
+4. Run the Qwen-only OpenRouter benchmark pack (Qwen 3.5 / Qwen 3 / Qwen 2.5):
+
+```bash
+./scripts/run_end_to_end.sh --config config.qwen-openrouter.json --viewer-output-dir data/v2/latest --with-additional-judges
+```
+
+5. Estimate total run cost from OpenRouter catalog pricing before collecting:
+
+```bash
+python3 scripts/estimate_openrouter_cost.py --config config.qwen-openrouter.json
+```
+
+6. Optionally run the default config end-to-end (publishes to `data/latest`):
 
 ```bash
 ./scripts/run_end_to_end.sh --with-additional-judges
 ```
 
-5. Open the viewer:
+7. Open the viewer:
 
 - Published viewer (latest): https://petergpt.github.io/bullshit-benchmark/viewer/index.v2.html
 - Local viewer (optional):
